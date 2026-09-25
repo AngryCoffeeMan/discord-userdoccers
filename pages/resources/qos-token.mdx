@@ -30,17 +30,17 @@ Serialized as `discord_protos.qos_token.v1.QosToken`.
 
 ###### Client Provided QoS Data Structure
 
-| Field     | Type    | Description                                                                                                                   |
-| --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| is_active | boolean | Whether the session is currently active (same as `active` under [QoS Payload](/gateway/gateway-events#qos-payload-structure)) |
+| Field     | Type    | Description                                                                                                                |
+| --------- | ------- | -------------------------------------------------------------------------------------------------------------------------- |
+| is_active | boolean | Whether the session is currently active (same as `active` in [QoS payload](/gateway/gateway-events#qos-payload-structure)) |
 
 ###### Derived QoS Token Structure
 
 | Field     | Type   | Description                                                  |
 | --------- | ------ | ------------------------------------------------------------ |
 | claims    | bytes  | The binary-encoded [QoS Claims](#qos-claims-object) protobuf |
-| signature | bytes  | Bytes of signature signed by key                             |
-| key_id    | uint32 | Presumably the key that signed this                          |
+| signature | bytes  | The signature                                                |
+| key_id    | uint32 | The ID of the signing key                                    |
 
 ### QoS Claims Object
 
@@ -52,6 +52,6 @@ Serialized as `discord_protos.qos_token.v1.Claims`.
 | --------------- | ------- | ------------------------------------------------------------------------------------------ |
 | user_id         | fixed64 | The user id this was issued for                                                            |
 | issued_at       | fixed64 | The unix timestamp (in milliseconds) of when this was issued                               |
-| is_staff        | boolean | If the user is discord staff                                                               |
+| is_staff        | boolean | Whether the user has [`STAFF`](/resources/user#user-flags) flag                            |
 | auth_token_hash | bytes   | SHA-256 hash of the authentication token used in the gateway session where this was issued |
 | expires_at      | fixed64 | The unix timestamp (in milliseconds) of when this expires                                  |
