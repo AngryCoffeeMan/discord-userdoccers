@@ -40,7 +40,7 @@ Serialized as `discord_protos.qos_token.v1.QosToken`.
 | --------- | ------ | -------------------------------------------------- |
 | claims    | bytes  | Protobuf bytes of [QoS Claims](#qos-claims-object) |
 | signature | bytes  | Bytes of signature signed by key                   |
-| uint32    | key_id | Presumably the key that signed this                |
+| key_id    | uint32 | Presumably the key that signed this                |
 
 ### QoS Claims Object
 
@@ -51,7 +51,7 @@ Serialized as `discord_protos.qos_token.v1.Claims`.
 | Field           | Type    | Description                                                                                |
 | --------------- | ------- | ------------------------------------------------------------------------------------------ |
 | user_id         | fixed64 | The user id this was issued for                                                            |
-| isssued_at      | fixed64 | The unix timestamp (in milliseconds) of when this was issued                               |
+| issued_at       | fixed64 | The unix timestamp (in milliseconds) of when this was issued                               |
 | is_staff        | boolean | If the user is discord staff                                                               |
 | auth_token_hash | bytes   | SHA-256 hash of the authentication token used in the gateway session where this was issued |
 | expires_at      | fixed64 | The unix timestamp (in milliseconds) of when this expires                                  |
