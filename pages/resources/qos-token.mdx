@@ -48,10 +48,10 @@ Serialized as `discord_protos.qos_token.v1.Claims`.
 
 ###### QoS Claims Structure
 
-| Field           | Type    | Description                                                  |
-| --------------- | ------- | ------------------------------------------------------------ |
-| user_id         | fixed64 | The user id this was issued for                              |
-| isssued_at      | fixed64 | The unix timestamp (in milliseconds) of when this was issued |
-| is_staff        | boolean | If the user is discord staff                                 |
-| auth_token_hash | bytes   | Unknown                                                      |
-| expires_at      | fixed64 | The unix timestamp (in milliseconds) of when this expires    |
+| Field           | Type    | Description                                                                                |
+| --------------- | ------- | ------------------------------------------------------------------------------------------ |
+| user_id         | fixed64 | The user id this was issued for                                                            |
+| isssued_at      | fixed64 | The unix timestamp (in milliseconds) of when this was issued                               |
+| is_staff        | boolean | If the user is discord staff                                                               |
+| auth_token_hash | bytes   | SHA-256 hash of the authentication token used in the gateway session where this was issued |
+| expires_at      | fixed64 | The unix timestamp (in milliseconds) of when this expires                                  |
