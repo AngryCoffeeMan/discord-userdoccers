@@ -21,10 +21,10 @@ Serialized as `discord_protos.qos_token.v1.QosToken`.
 
 ###### QoS Token Structure
 
-| Field           | Type                                                     | Description                      |
-| --------------- | -------------------------------------------------------- | -------------------------------- |
-| client_provided | [client provided](#client-provided-structure) object     | QoS data specified by the client |
-| derived ^1^     | [derived qos token](#derived-qos-token-structure) object | Data provided by Gateway         |
+| Field           | Type                                                      | Description                      |
+| --------------- | --------------------------------------------------------- | -------------------------------- |
+| client_provided | [client provided](#client-provided-structure) object?     | QoS data specified by the client |
+| derived ^1^     | [derived qos token](#derived-qos-token-structure) object? | Data provided by Gateway         |
 
 ^1^ The derived data is provded by `qos_token` under the [Ready](/gateway/gateway-events#ready) event, and then saved in persistent storage for the current user id.
 
