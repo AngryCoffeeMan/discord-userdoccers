@@ -21,10 +21,10 @@ Serialized as `discord_protos.qos_token.v1.QosToken`.
 
 ###### QoS Token Structure
 
-| Field           | Type                                                      | Description                      |
-| --------------- | --------------------------------------------------------- | -------------------------------- |
-| client_provided | ?[client provided QoS data](#client-provided-qos-data-structure) object     | QoS data specified by the client |
-| derived ^1^     | ?[derived QoS token](#derived-qos-token-structure) object | QoS data provided by Gateway         |
+| Field           | Type                                                                    | Description                      |
+| --------------- | ----------------------------------------------------------------------- | -------------------------------- |
+| client_provided | ?[client provided QoS data](#client-provided-qos-data-structure) object | QoS data specified by the client |
+| derived ^1^     | ?[derived QoS token](#derived-qos-token-structure) object               | QoS data provided by Gateway     |
 
 ^1^ The derived data is provded by `qos_token` under the [Ready](/gateway/gateway-events#ready) event, and then saved in persistent storage for the current user id.
 
@@ -36,11 +36,11 @@ Serialized as `discord_protos.qos_token.v1.QosToken`.
 
 ###### Derived QoS Token Structure
 
-| Field     | Type   | Description                                        |
-| --------- | ------ | -------------------------------------------------- |
-| claims    | bytes  | Protobuf bytes of [QoS Claims](#qos-claims-object) |
-| signature | bytes  | Bytes of signature signed by key                   |
-| key_id    | uint32 | Presumably the key that signed this                |
+| Field     | Type   | Description                                                  |
+| --------- | ------ | ------------------------------------------------------------ |
+| claims    | bytes  | The binary-encoded [QoS Claims](#qos-claims-object) protobuf |
+| signature | bytes  | Bytes of signature signed by key                             |
+| key_id    | uint32 | Presumably the key that signed this                          |
 
 ### QoS Claims Object
 
